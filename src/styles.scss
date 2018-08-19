@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: sans-serif;
+    margin:0;
+    padding:0;
+}
+
+.logo {
+    display: block;
+    max-height:34px;
+    max-width: 140px;
+    cursor: pointer;
+    &__img {
+        max-height: 34px;
+    }
+}
+
+
+.nav {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: .2rem;
+    position: relative;
+    border: solid #f8f9fa;
+}
+.nav-list {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    &__link {
+        display: block;
+        padding: .5rem 1rem;
+        color: #007bff;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: pointer;
+        user-select: none;
+    
+        &:hover {
+            color: #0056b3;
+        }
+    }
+}
+
+.wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+.form {
+    
+    &__group {
+        margin-bottom: 1rem;
+    }
+
+    &__label{
+        display: inline-block;
+        margin-bottom: .5rem;
+    }
+
+    &__control {
+        display: block;
+        width: 100%;
+        height: calc(2.25rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    &__has-error {
+        border-color: red;
+    }
+    &__error {
+        color:red;
+    }
+    &__submit {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+        &:hover:not(:disabled):not(.disabled) {
+            color: #fff;
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        &:not(:disabled):not(.disabled) {
+            cursor: pointer;
+        }
+        &:disabled {
+            opacity: .65;
+        }
+    }
+}
+    

@@ -1,0 +1,56 @@
+<div class="wrapper">
+    <h1>Registration Form</h1>
+    <form class="form" [formGroup] = "form" (ngSubmit)="onSubmit(form)">
+
+      <div class="form__group">
+        <label class="form__label" for="name">Name</label>
+        <input type="text" class="form__control" [ngClass]="{'form__has-error':form.get('name').invalid&&form.get('name').touched}" id="name" formControlName="name">
+        <small *ngIf="form.get('name').invalid&&form.get('name').touched" class="form__error">This is a required field</small>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label" for="email">Email</label>
+        <input type="email" class="form__control" [ngClass]="{'form__has-error':form.get('email').invalid&&form.get('email').touched}" id="email" formControlName="email" >
+        <small *ngIf="form.get('email').invalid&&form.get('email').touched" class="form__error">
+          <span *ngIf="form.get('email').errors['required']&&form.get('email').touched" >This is a required field</span>
+          <span *ngIf="form.get('email').errors['email']&&form.get('email').touched" class="form__error">It shoud be an email</span>
+        </small>
+        
+      </div>
+
+      <div class="form__group">
+        <label class="form__label" for="selectCity">Select City</label>
+        <select id="selectCity" class="form__control" formControlName="selectCity">
+          <option value="Kyiv">Kyiv</option>
+          <option value="Kharkiv">Kharkiv</option>
+          <option value="Lviv">Lviv</option>
+          <option value="Dnipro">Dnipro</option>
+          <option value="Ternopil">Ternopil</option>
+        </select>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label" for="password">Password</label>
+        <input type="password" class="form__control" [ngClass]="{'form__has-error':form.get('password').invalid&&form.get('password').touched}" id="password" formControlName="password">
+        <small *ngIf="form.get('password').invalid&&form.get('password').touched" class="form__error">
+            <span *ngIf="form.get('password').errors['required']&&form.get('password').touched" >This is a required field.</span>
+            <span *ngIf="form.get('password').errors['minlength']&&form.get('password').touched">Password should contain 6 characters.</span>
+        </small>
+      </div>
+      
+      <div class="form__group">
+        <label class="form__label" for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form__control" [ngClass]="{'form__has-error':form.get('confirmPassword').invalid&&form.get('confirmPassword').touched}" id="confirmPassword" formControlName="confirmPassword">
+        <small *ngIf="form.get('confirmPassword').invalid&&form.get('confirmPassword').errors['required']&&form.get('confirmPassword').touched" class="form__error" >This is a required field. </small>
+        <small *ngIf="form.get('confirmPassword').touched&&form.get('password').touched&&form.errors&&form.errors['confirm']" class="form__error">Password does not match.</small>
+  
+      </div>
+
+      <div class="form__group">
+        <button type="submit" class="form__submit" [disabled]="form.invalid">
+          Submit
+        </button>
+      </div>
+    </form>
+</div>
+
