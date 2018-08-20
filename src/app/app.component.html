@@ -10,7 +10,10 @@
     </li>
   </ul>
 </nav>
-<app-form *ngIf="isOpenForm" (close)="onChanged($event)"></app-form>
-<div class="popUp">
-  
+<app-form *ngIf="isOpenForm" (message)="onChanged($event)"></app-form>
+<div *ngIf="isOpenPopup"class="pop-up">
+  <h2>
+    Thanks you for registering the {{message.name}}
+    <span *ngIf="message.city">from the city {{message.city}}</span>.
+  </h2>
 </div>

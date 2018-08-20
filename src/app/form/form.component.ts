@@ -1,5 +1,5 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,8 +9,13 @@ import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl } from
 export class FormComponent implements OnInit {
 
   form: FormGroup;
+  message = {
+    name:'',
+    city:''
+  }
 
-  @Output() close: EventEmitter<any> = new EventEmitter();
+
+  @Output('message') messageEmmiter: EventEmitter<{name:string, city:string}> = new EventEmitter();
 
   constructor(private fb: FormBuilder) { }
 
@@ -29,8 +34,10 @@ export class FormComponent implements OnInit {
         return {confirm: true};
     }
   }
+  
   onSubmit(form) {
-    console.log(form);
-    this.close.emit(form); 
+    this.message.name = this.form.get('name').value;
+    this.message.city = this.form.get('selectCity').value;
+    this.messageEmmiter.emit(this.message); 
   }
 }
