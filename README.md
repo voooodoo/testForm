@@ -1,27 +1,30 @@
-# TestForm
+https://voooodoo.github.io/testForm/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Create a registration form with next fields:
+- name
+- e-mail
+should have verification of validation
+- city
+it should be a select field with any 5 cities
+- password
+must have at least 6 characters
+- password confirmation
+must match the password field
+All fields except the field "city" are required.
+When sending a form with invalid data, display error messages.
+If the form is sent successfully, the form should be collapsed (the title and logo remains), in its place
+appears a button that unfolds it.
+Show a message like this: "Thank you for registering the NAME from the city CITY."
+*NAME and CITY are entered values
+*remember, CITY isn’t required field
+When the form is re-sent, the message should be deleted.
+Design
+The form should have a centered title, in the left upper corner should be a positioned company logo (an
+arbitrary picture downloaded from the Internet);
+The rest of the styles are at your discretion.
+Technologies
+A mandatory requirement is the use of:
+BEM
+LESS or SASS
+Logic can be written either on pure JS (ES6 preferably), or using any framework or library that you are
+familiar with.

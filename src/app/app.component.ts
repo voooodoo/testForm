@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
   }
 
   onChanged(message:{name:string, city:string}) {
-    console.log(message);
     this.message = message;
     this.isOpenForm = false;
     this.isOpenPopup = true;
